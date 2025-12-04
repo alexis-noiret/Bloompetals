@@ -1,0 +1,590 @@
+/* 0. Style global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Lobster", cursive;
+    background: linear-gradient(180deg, #f8eaff, #f2ddff, #ffffff);
+    color: #444;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 1. Header et navigation */
+header {
+    background: #b590d4;
+    padding: 15px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+nav {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    opacity: 0.7;
+}
+
+/* 2. Logo */
+.logo {
+    font-family: 'Pacifico', cursive !important;
+    font-size: 70px;
+    color: #9b3d7f;
+    margin-bottom: 20px;
+    animation: float 4s ease-in-out infinite;
+}
+
+/* 3. Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-8px); }
+    100% { transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 1.6s ease;
+}
+
+/* 4. Barre de recherche */
+.search {
+    width: 160px;
+    height: 22px;
+    background: #e7d9f5;
+    border-radius: 15px;
+}
+
+/* 5. Hero / section principale */
+.real-header, .hero {
+    width: 80%;
+    margin: 60px auto;
+    text-align: center;
+    animation: fadeIn 1.6s ease;
+}
+
+.real-header h1, .hero-title {
+    font-family: "Pacifico", cursive;
+    font-size: 52px;
+    color: #9b3d7f;
+    margin-bottom: 20px;
+}
+
+.real-header p, .hero-text {
+    font-family: "Lobster", cursive;
+    font-size: 20px;
+    color: #555;
+    line-height: 1.8;
+    width: 75%;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+/* 6. Pourquoi nous choisir */
+.real-why {
+    width: 80%;
+    margin: 40px auto 60px;
+    background: #f8e9ff;
+    padding: 30px 40px;
+    border-radius: 20px;
+    border: 2px solid #d7b7f3;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    animation: fadeIn 1.6s ease;
+}
+
+.real-why h2 {
+    font-family: "Pacifico", cursive;
+    font-size: 38px;
+    text-align: center;
+    color: #9b3d7f;
+    margin-bottom: 20px;
+}
+
+.real-why p {
+    font-family: "Lobster", cursive;
+    font-size: 20px;
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+.real-why p strong {
+    color: #7a2c64;
+}
+
+.real-why .closing {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 21px;
+    color: #6d2a5b;
+}
+
+/* 7. Galerie d’images */
+.gallery-section {
+    width: 90%;
+    margin: 40px auto 80px;
+    animation: fadeIn 1.6s ease;
+}
+
+.gallery-section h2 {
+    text-align: center !important;
+    width: 100% !important;
+    display: block !important;
+    margin-bottom: 25px !important;
+    font-family: "Pacifico", cursive;
+    font-size: 40px;
+    color: #9b3d7f;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    grid-auto-flow: dense;
+}
+
+.grid-item {
+    overflow: hidden;
+    border-radius: 18px;
+    background: #f3e1ff;
+    border: 2px solid #d1b3f0;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+}
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.4s;
+}
+
+.grid-item:hover img {
+    transform: scale(1.05);
+}
+
+.tall { grid-row: span 2; }
+.wide { grid-column: span 2; }
+
+@media (max-width: 900px) {
+    .tall { grid-row: span 1; }
+    .wide { grid-column: span 1; }
+}
+
+/* 8. Footer */
+.footer-simple {
+    text-align: center;
+    padding: 25px 0;
+    background: #b590d4;
+    color: white;
+    font-size: 18px;
+    margin-top: 60px;
+}
+
+/* 9. Boutons CTA */
+.cta-button {
+    display: inline-block;
+    background: #b590d4;
+    padding: 12px 25px;
+    border-radius: 20px;
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.cta-button:hover {
+    opacity: 0.8;
+}
+
+/* 10. Services */
+.services-section {
+    width: 85%;
+    margin: 80px auto;
+    text-align: center;
+}
+
+.services-section h2 {
+    font-family: "Pacifico", cursive;
+    font-size: 42px;
+    color: #9b3d7f;
+    margin-bottom: 40px;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 35px;
+}
+
+.service-card {
+    background: #f8e9ff;
+    border: 2px solid #d7b7f3;
+    border-radius: 20px;
+    padding: 25px;
+    font-family: "Lobster", cursive;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    transition: 0.3s ease;
+}
+
+.service-card h3 {
+    font-family: "Pacifico", cursive;
+    color: #9b3d7f;
+    margin: 15px 0;
+    font-size: 26px;
+}
+
+.service-card p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #444;
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+}
+
+/* 11. Équipe et Qualités */
+.engagement {
+    width: 75%;
+    margin: 60px auto 40px;
+    text-align: center;
+    font-size: 20px;
+    line-height: 1.8;
+    animation: fadeIn 1.6s ease;
+}
+
+.engagement h2 {
+    font-family: "Pacifico", cursive;
+    color: #9b3d7f;
+    font-size: 34px;
+    margin-bottom: 15px;
+}
+
+.team-section {
+    width: 90%;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.team-section h2 {
+    font-family: "Pacifico", cursive;
+    font-size: 40px;
+    color: #9b3d7f;
+    margin-bottom: 30px;
+}
+
+.team-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.member {
+    width: 280px;
+    padding: 20px;
+    background: #ffffffdd;
+    border-radius: 18px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    transition: 0.3s;
+    animation: fadeIn 1.6s ease;
+}
+
+.member:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 18px rgba(0,0,0,0.12);
+}
+
+.member img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 14px;
+    border: 2px solid #d1b3f0;
+    background: #f3e1ff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    margin-bottom: 15px;
+}
+
+.member h3 {
+    font-size: 26px;
+    color: #7a3fa4;
+}
+
+.member p {
+    font-size: 16px;
+    color: #555;
+    margin-top: 5px;
+}
+
+.qualities {
+    width: 90%;
+    margin: 60px auto;
+    background: #ffffffdd;
+    padding: 40px;
+    border-radius: 18px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    animation: fadeIn 1.6s ease;
+}
+
+.qualities h2 {
+    text-align: center;
+    font-size: 36px;
+    color: #9b3d7f;
+    font-family: "Pacifico", cursive;
+    margin-bottom: 30px;
+}
+
+.qualities-list {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.qualities-list div {
+    width: 250px;
+    text-align: center;
+}
+
+.qualities-list h3 {
+    font-size: 24px;
+    color: #7a3fa4;
+    margin-bottom: 10px;
+}
+
+/* 12. Contact */
+.contact-section {
+    width: 70%;
+    margin: 60px auto;
+    text-align: center;
+    animation: fadeIn 1.6s ease;
+}
+
+.contact-section h1 {
+    font-family: "Pacifico", cursive;
+    font-size: 50px;
+    color: #9b3d7f;
+    margin-bottom: 20px;
+}
+
+.contact-section p {
+    font-size: 20px;
+    margin-bottom: 35px;
+    color: #555;
+}
+
+.contact-form {
+    width: 70%;
+    margin: auto;
+    background: #ffffffdd;
+    padding: 35px;
+    border-radius: 18px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-form label {
+    font-size: 18px;
+    color: #7a3fa4;
+    text-align: left;
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    border: 2px solid #d1b3f0;
+    background: #f7ecff;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+    border-color: #b590d4;
+    box-shadow: 0 0 8px rgba(181,144,212,0.4);
+}
+
+textarea {
+    height: 110px;
+    resize: none;
+}
+
+.checkbox-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.checkbox-container label {
+    font-size: 16px;
+    font-weight: normal;
+    color: #444;
+}
+
+.contact-form button {
+    padding: 14px 20px;
+    background: #c279ff;
+    color: white;
+    border: none;
+    border-radius: 18px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 200px;
+    margin: 20px auto 0;
+}
+
+.contact-form button:hover {
+    background: #a35dd4;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+}
+
+.contact-image {
+    width: 250px;
+    border-radius: 18px;
+    margin: 0 auto 25px auto;
+    display: block;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+}
+
+/* 13. Page d’accueil */
+body.index-page .gallery-section {
+    width: 80%;
+    margin-top: 40px;
+}
+
+body.index-page .gallery-grid {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+body.index-page .gallery-grid img {
+    width: 260px;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 18px;
+    border: 2px solid #d1b3f0;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+}
+
+/* ================= MEDIA QUERIES ================= */
+
+/* Tablettes */
+@media (max-width: 992px) {
+    .real-header h1, .hero-title {
+        font-size: 42px;
+    }
+
+    .real-header p, .hero-text,
+    .real-why p {
+        font-size: 18px;
+        width: 90%;
+    }
+
+    .service-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .contact-form {
+        width: 90%;
+        padding: 25px;
+    }
+}
+
+/* Mobiles */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .real-header h1, .hero-title {
+        font-size: 36px;
+    }
+
+    .real-header p, .hero-text,
+    .real-why p {
+        font-size: 16px;
+        width: 95%;
+    }
+
+    .service-grid,
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .team-grid {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .qualities-list {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+/* Très petits écrans */
+@media (max-width: 480px) {
+    .real-header h1, .hero-title {
+        font-size: 28px;
+    }
+
+    .real-header p, .hero-text,
+    .real-why p {
+        font-size: 14px;
+    }
+
+    nav ul {
+        gap: 10px;
+    }
+
+    .cta-button {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}
